@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dekho || Abdur Rahman Adil</title>
+    <!-- favicon -->
+     <link rel="shortcut icon" href="./src/assets/images/clouds.png" type="image/x-icon">
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <section
+      class="h-screen w-full bg-linear-to-br from-black to-black/70 flex items-center justify-center select-none"
+    >
+      <div
+        class="weather-container bg-gray-900 backdrop-blur-lg p-8 rounded-xl border border-gray-400 md:min-w-100 min-w-70 shadow-2xl"
+      >
+        <h1
+          class="text-center font-extrabold uppercase text-white text-3xl mb-4"
+        >
+          <i class="fas fa-cloud-sun"></i>
+          Weather Dekho
+        </h1>
+        <form class="overflow-hidden relative mb-4">
+          <input
+            type="text"
+            placeholder="Enter your city name"
+            id="city-in"
+            autocomplete="off"
+            spellcheck="false"
+            class="w-full py-2 px-3 outline-0 border border-white rounded-lg bg-white"
+          />
+          <button
+            type="submit"
+            id="submit-btn"
+            class="absolute w-10 border border-white right-0 h-10.5 bg-gray-700 text-white rounded-tr-lg rounded-br-lg cursor-pointer"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+          <p class="error py-3 text-gray-600 text-center hidden">
+            City doesn't exists
+          </p>
+        </form>
+        <!-- loading -->
+        <div
+          role="status"
+          aria-label="loading"
+          class="items-center justify-center loading hidden"
+        >
+          <svg
+            class="w-6 h-6 stroke-indigo-600 animate-spin"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_9023_61563)">
+              <path
+                d="M14.6437 2.05426C11.9803 1.2966 9.01686 1.64245 6.50315 3.25548C1.85499 6.23817 0.504864 12.4242 3.48756 17.0724C6.47025 21.7205 12.6563 23.0706 17.3044 20.088C20.4971 18.0393 22.1338 14.4793 21.8792 10.9444"
+                stroke="stroke-current"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                class="my-path"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_9023_61563">
+                <rect width="24" height="24" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <!-- result -->
+        <div class="result hidden">
+          <h6 class="city-display text-xl text-white/80 text-center capitalize">
+            London,GB
+          </h6>
+          <div class="flex items-center justify-center gap-2 text-center">
+            <img
+              src="./src/assets/images/mist.png"
+              id="weather-conditon-img"
+              class="w-15"
+            />
+            <h1 class="temp-display text-5xl font-bold text-white p-y-2">
+              26℃
+            </h1>
+          </div>
+          <h4 class="condition-display text-white/80 text-center capitalize">
+            Broken Clouds
+          </h4>
+          <!-- detailes -->
+          <div class="detailes mt-4">
+            <!-- 1st row -->
+            <div class="row flex justify-between items-center">
+              <div class="col flex items-center gap-2">
+                <img src="./src/assets/images/humidity.png" class="w-8" />
+                <div>
+                  <h4 class="text-white">Humidity</h4>
+                  <h2 class="humidity text-white font-bold text-xl">52%</h2>
+                </div>
+              </div>
+              <div class="col flex items-center gap-2">
+                <img src="./src/assets/images/wind.png" class="w-8" />
+                <div>
+                  <h4 class="text-white">Wind</h4>
+                  <h2 class="wind text-white font-bold text-xl">3.58 m/s</h2>
+                </div>
+              </div>
+            </div>
+            <!-- 2nd row -->
+            <div class="row flex justify-between items-center mt-3">
+              <div class="col flex items-center gap-2">
+                <img src="./src/assets/images/pressure.png" class="w-8" />
+                <div>
+                  <h4 class="text-white">Pressure</h4>
+                  <h2 class="pressure text-white font-bold text-xl">52 hPa</h2>
+                </div>
+              </div>
+              <div class="col flex items-center gap-2">
+                <img src="./src/assets/images/date.png" class="w-8" />
+                <div>
+                  <h4 class="text-white">Date</h4>
+                  <h2 class="date text-white font-bold text-[14.5px]">
+                    12/25/2025
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="copy-right text-center text-[12px] mt-3 font-semibold uppercase text-white"
+        >
+          &copy; Abdur Rahman Adil
+        </p>
+      </div>
+    </section>
+
+    <!-- js -->
+    <script src="./src/app.js"></script>
+  </body>
+</html>
