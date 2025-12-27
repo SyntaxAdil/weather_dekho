@@ -27,9 +27,9 @@ A modern, responsive weather application that provides real-time weather informa
 ## 📸 Preview
 
 <div align="center">
-  <img src="https://via.placeholder.com/300x600/1e293b/ffffff?text=Mobile+View" alt="Mobile View" width="150">
-  <img src="https://via.placeholder.com/500x400/1e293b/ffffff?text=Desktop+View" alt="Desktop View" width="300">
-  <img src="https://via.placeholder.com/300x600/1e293b/ffffff?text=Weather+Results" alt="Results View" width="150">
+  <img src="./src/assets/images/mobile-view.png" alt="Mobile View" width="150">
+  <img src="./src/assets/images/result-preview.png" alt="Desktop View" width="150">
+  <img src="./src/assets/images/preview-ui.png" alt="Result View" width="300">
 </div>
 
 ## 🛠️ Technologies Used
