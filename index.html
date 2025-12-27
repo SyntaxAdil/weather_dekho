@@ -14,15 +14,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- css -->
-    <link rel="stylesheet" href="./src/style.css" />
+    <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
   </head>
   <body>
     <section
-      class="h-screen w-full bg-linear-to-br from-black to-black/70 flex items-center justify-center select-none"
-    >
+      class="h-screen w-full bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('./src/assets/images/weather-bg.jpg')] bg-cover bg-no-repeat bg-center flex items-center justify-center select-none" id="main-section"   >
+    
       <div
-        class="weather-container bg-gray-900 backdrop-blur-lg p-8 rounded-xl border border-gray-400 md:min-w-100 min-w-70 shadow-2xl"
+        class="weather-container bg-white-20 backdrop-blur-lg p-8 rounded-xl border border-gray-400 md:min-w-100 min-w-70 shadow-2xl"
       >
         <h1
           class="text-center font-extrabold uppercase text-white text-3xl mb-4"
@@ -144,6 +145,12 @@
         </p>
       </div>
     </section>
+
+
+
+
+    
+
 
     <!-- js -->
     <script src="./src/app.js"></script>

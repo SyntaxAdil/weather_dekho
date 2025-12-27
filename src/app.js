@@ -1,4 +1,5 @@
 // variables declaration
+const mainSection = document.getElementById("main-section");
 const cityIn = document.getElementById("city-in");
 const submitBtn = document.getElementById("submit-btn");
 const result = document.querySelector(".result");
@@ -17,16 +18,36 @@ const loading = document.querySelector(".loading");
 function changeImage(d) {
   if (d.weather[0].main === "Clouds") {
     weatherConditionImage.src = "./src/assets/images/clouds.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('./src/assets/images/cloud-sky.jpg')";
   } else if (d.weather[0].main === "Mist") {
     weatherConditionImage.src = "./src/assets/images/mist.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('./src/assets/images/mist-sky.jpg')";
   } else if (d.weather[0].main === "Drizzle") {
     weatherConditionImage.src = "./src/assets/images/drizzle.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('./src/assets/images/drizzle-sky.jpg')";
   } else if (d.weather[0].main === "Clear") {
     weatherConditionImage.src = "./src/assets/images/clear.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url('./src/assets/images/free-sky.jpg')";
   } else if (d.weather[0].main === "Rain") {
     weatherConditionImage.src = "./src/assets/images/rain.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('./src/assets/images/rainy-sky.jpg')";
+  } else if (d.weather[0].main === "Fog") {
+    weatherConditionImage.src = "./src/assets/images/rain.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('./src/assets/images/fog-sky.jpg')";
+  } else if (d.weather[0].main === "Snow") {
+    weatherConditionImage.src = "./src/assets/images/rain.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('./src/assets/images/snow-sky.jpg')";
   } else {
     weatherConditionImage.src = "./src/assets/images/snow.png";
+    mainSection.style.backgroundImage =
+      "linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),url('./src/assets/images/weather-bg.jpg')";
   }
 }
 
@@ -57,11 +78,14 @@ async function updateWeather() {
   let date = new Date();
   let apiKey = "&appid=4c243b03b05493db3d0f15e7bfd513d1&units=metric";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+
   loading.style.display = "flex";
   try {
     let res = await fetch(apiUrl + cityIn.value.trim() + apiKey);
     let data = await res.json();
+
     loading.style.display = "none";
+
     errorDisplay(data);
 
     cityDisplay.innerHTML = data.name;
